@@ -1,10 +1,9 @@
-import asyncio
+import os
 import uvicorn
 
-async def main():
-    config = uvicorn.Config("api_modelo_salario:app", port=8000, log_level="info", reload=True)
-    server = uvicorn.Server(config)
-    await server.serve()
-    
 if __name__ == "__main__":
-    asyncio.run(main())
+    # Render (e outras plataformas) definem a porta via variável de ambiente PORT
+    port = int(os.environ.get("PORT", 10000))
+    host = os.environ.get("HOST", "0.0.0.0")
+    # No ambiente de desenvolvimento você pode continuar usando: python api_main.py
+    uvicorn.run("api_modelo_salario:app", host=host, port=port, log_level="info")

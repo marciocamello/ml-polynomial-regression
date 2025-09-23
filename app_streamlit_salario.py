@@ -21,7 +21,8 @@ input_features = {
 # Criar um botao e capturar um evento deste botao para disparar a API
 if st.button("Estimar Salário"):
     # Fazer a requisição para a API
-    api_url = "http://127.0.0.1:8000/predict"  # Substitua pela URL correta da sua API
+    #api_url = "http://127.0.0.1:10000/predict"  # Use esta URL para testes locais
+    api_url = "https://ml-polynomial-regression.onrender.com/predict"  # Substitua pela URL correta da sua API
     res = requests.post(api_url, data=json.dumps(input_features))
     
     if res.status_code == 200:
