@@ -16,6 +16,7 @@ streamlit = "*"
 uvicorn = "*"
 requests = "*"
 pingouin = "*"
+asyncio = "*"
 
 [dev-packages]
 

@@ -1,0 +1,7 @@
+POST http://localhost:8000/predict
+Accept: application/json
+
+{
+    "tempo_na_empresa": 72,
+    "nivel_na_empresa": 5
+}
